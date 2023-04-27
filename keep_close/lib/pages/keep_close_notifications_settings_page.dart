@@ -21,10 +21,12 @@ class _KeepCloseNotificationsSettingsPageState extends State<KeepCloseNotificati
     return Scaffold(
       // For our appbar, I've utilized my custom component KCAppBar
       appBar: KCAppBar(
-          title: "Notification Settings",
+          title: "Settings",
           backgroundColor: KCColorTheme.getDarkColor(),
           accentColor: KCColorTheme.getLightColor(),
-          fontSize: 30
+          fontSize: 30,
+        hasIcon: true,
+        iconData: Icons.circle_notifications_outlined,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

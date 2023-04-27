@@ -29,10 +29,11 @@ class _KeepCloseFrontPageState extends State<KeepCloseFrontPage> {
     return Scaffold(
       // For our appbar, I've utilized my custom component KCAppBar
       appBar: KCAppBar(
-          title: widget.title,
-          backgroundColor: KCColorTheme.getDarkColor(),
-          accentColor: KCColorTheme.getLightColor(),
-          fontSize: 30
+        title: widget.title,
+        backgroundColor: KCColorTheme.getDarkColor(),
+        accentColor: KCColorTheme.getLightColor(),
+        fontSize: 25,
+        hasIcon: false,
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -57,7 +58,6 @@ class _KeepCloseFrontPageState extends State<KeepCloseFrontPage> {
             KCElevatedButton(
                 buttonTitle: "Set Up Device",
                 onPress: () async {
-                  print("Pressed Setup device button");
                   await Navigator.push(context,
                     MaterialPageRoute(builder: (BuildContext context) {
                       return KeepCloseSetupPage();
@@ -70,7 +70,6 @@ class _KeepCloseFrontPageState extends State<KeepCloseFrontPage> {
             KCElevatedButton(
                 buttonTitle: "Notification Settings",
                 onPress: () async {
-                  print("Pressed Notification Settings button");
                   await Navigator.push(context,
                       MaterialPageRoute(builder: (BuildContext context) {
                         return KeepCloseNotificationsSettingsPage();

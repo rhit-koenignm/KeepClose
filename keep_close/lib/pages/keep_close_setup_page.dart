@@ -28,10 +28,12 @@ class _KeepCloseSetupPageState extends State<KeepCloseSetupPage> {
     return Scaffold(
       // For our appbar, I've utilized my custom component KCAppBar
       appBar: KCAppBar(
-          title: "Set Up Device",
-          backgroundColor: KCColorTheme.getDarkColor(),
-          accentColor: KCColorTheme.getLightColor(),
-          fontSize: 30
+        title: "Device Setup",
+        backgroundColor: KCColorTheme.getDarkColor(),
+        accentColor: KCColorTheme.getLightColor(),
+        fontSize: 28,
+        hasIcon: true,
+        iconData: Icons.devices_other_rounded,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

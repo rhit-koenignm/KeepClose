@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:keep_close/components/keep_close_color_theme.dart';
 
 class KCAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
@@ -7,10 +8,12 @@ class KCAppBar extends StatelessWidget with PreferredSizeWidget {
   final Color backgroundColor;
   final Color accentColor;
   final double fontSize;
+  final bool hasIcon;
+  final IconData? iconData;
 
   KCAppBar(
-      {Key? key, required this.title, required this.backgroundColor, required this.accentColor, required this.fontSize})
-      : preferredSize = Size.fromHeight(60.0),
+      {Key? key, required this.title, required this.backgroundColor, required this.accentColor, required this.fontSize, required this.hasIcon, this.iconData})
+      : preferredSize = Size.fromHeight(50.0),
         super(key: key);
 
   @override
@@ -19,7 +22,24 @@ class KCAppBar extends StatelessWidget with PreferredSizeWidget {
       title: Flex(
         mainAxisAlignment: MainAxisAlignment.center,
         direction: Axis.horizontal,
-        children: [
+        children: hasIcon ?
+            <Widget>[
+              Text(
+                title,
+                style: TextStyle(
+                    color: accentColor,
+                    fontSize: fontSize
+                ),
+              ),
+              const SizedBox(
+                width: 10,
+              ),
+              Icon(
+                iconData,
+                color: KCColorTheme.getLightColor(),
+              ),
+            ]
+        : <Widget>[
           Text(
             title,
             style: TextStyle(
@@ -37,7 +57,7 @@ class KCAppBar extends StatelessWidget with PreferredSizeWidget {
       backgroundColor: backgroundColor,
       iconTheme: IconThemeData(
           color: accentColor,
-          size: 50
+          size: 40
       ),
     );
   }

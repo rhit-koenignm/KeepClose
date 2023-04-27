@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:keep_close/components/kc_appbar.dart';
 import 'package:keep_close/components/keep_close_color_theme.dart';
+import 'package:keep_close/pages/keep_close_setup_page.dart';
 
 /* Author: Natalie Koenig
  * Last Updated: 4/26/2023
@@ -49,11 +50,15 @@ class _KeepCloseFrontPageState extends State<KeepCloseFrontPage> {
           // center the children vertically; the main axis here is the vertical
           // axis because Columns are vertical (the cross axis would be
           // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             ElevatedButton(
-              onPressed: () {
+              onPressed: () async {
                 print("Pressed Setup device button");
+                await Navigator.push(context,
+                    MaterialPageRoute(builder: (BuildContext context) {
+                  return KeepCloseSetupPage();
+                }));
               },
               style: ButtonStyle(
                 backgroundColor: MaterialStatePropertyAll<Color>(KCColorTheme.getYellowAccent()),
@@ -68,9 +73,9 @@ class _KeepCloseFrontPageState extends State<KeepCloseFrontPage> {
                 ),
               ),
             ),
-            SizedBox(
-              height: buttonSpacing,
-            ),
+            // SizedBox(
+            //   height: buttonSpacing,
+            // ),
             ElevatedButton(
               onPressed: () {
                 print("Pressed Notification Settings button");

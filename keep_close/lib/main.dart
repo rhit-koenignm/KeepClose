@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:keep_close/components/keep_close_color_theme.dart';
 import 'package:keep_close/pages/keep_close_front_page.dart';
 
 void main() {
@@ -23,7 +24,16 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        // primarySwatch: Colors.blue,
+        primaryColor: KCColorTheme.getYellowAccent(),
+        hintColor: KCColorTheme.getYellowAccent(),
+        inputDecorationTheme: InputDecorationTheme(
+          labelStyle: TextStyle(color: KCColorTheme.getYellowAccent()),
+          floatingLabelStyle: TextStyle(color: KCColorTheme.getYellowAccent()),
+          hintStyle: TextStyle(color: KCColorTheme.getYellowAccent()),
+          focusColor: KCColorTheme.getYellowAccent(),
+
+        )
       ),
       debugShowCheckedModeBanner: false,
       home: const KeepCloseFrontPage(title: 'Keep Close'),

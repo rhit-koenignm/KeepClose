@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:keep_close/components/kc_elevated_button.dart';
 import 'package:keep_close/components/kc_text_form_field.dart';
 
 import '../components/kc_appbar.dart';
 import '../components/keep_close_color_theme.dart';
+
+/* Author: Natalie Koenig
+ * Last Updated: 4/26/2023
+ * Description: A class to hold the appearance and functionality
+ * behind the app's device setup page
+ */
 
 class KeepCloseSetupPage extends StatefulWidget {
   const KeepCloseSetupPage({Key? key}) : super(key: key);
@@ -33,40 +40,24 @@ class _KeepCloseSetupPageState extends State<KeepCloseSetupPage> {
             padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
             child: KCTextFormField(labelText: "Enter Device Name"),
           ),
-          ElevatedButton(
-            onPressed: () {
+          KCElevatedButton(
+            buttonTitle: "Search for Devices",
+            onPress: () {
               print("Pressed Search Button");
             },
-            style: ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll<Color>(KCColorTheme.getYellowAccent()),
-                minimumSize: MaterialStateProperty.all(Size(buttonWidth, buttonHeight))
-            ),
-            child: Text(
-              "Search for Devices",
-              style: TextStyle(
-                color: KCColorTheme.getDarkColor(),
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+            minWidth: buttonWidth,
+            minHeight: buttonHeight,
+            fontSize: 20,
           ),
-          ElevatedButton(
-            onPressed: () {
+          KCElevatedButton(
+            fontSize: 20,
+            buttonTitle: "Connect to Device",
+            onPress: () {
               print("Pressed Connect button");
             },
-            style: ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll<Color>(KCColorTheme.getYellowAccent()),
-                minimumSize: MaterialStateProperty.all(Size(buttonWidth, buttonHeight))
-            ),
-            child: Text(
-              "Connect to Device",
-              style: TextStyle(
-                color: KCColorTheme.getDarkColor(),
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          )
+            minWidth: buttonWidth,
+            minHeight: buttonHeight
+          ),
         ],
       ),
     );

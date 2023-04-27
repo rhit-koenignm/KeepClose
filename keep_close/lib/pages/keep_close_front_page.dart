@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:keep_close/components/kc_appbar.dart';
+import 'package:keep_close/components/kc_elevated_button.dart';
 import 'package:keep_close/components/keep_close_color_theme.dart';
+import 'package:keep_close/pages/keep_close_notifications_settings_page.dart';
 import 'package:keep_close/pages/keep_close_setup_page.dart';
 
 /* Author: Natalie Koenig
@@ -52,47 +54,32 @@ class _KeepCloseFrontPageState extends State<KeepCloseFrontPage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            ElevatedButton(
-              onPressed: () async {
-                print("Pressed Setup device button");
-                await Navigator.push(context,
+            KCElevatedButton(
+                buttonTitle: "Set Up Device",
+                onPress: () async {
+                  print("Pressed Setup device button");
+                  await Navigator.push(context,
                     MaterialPageRoute(builder: (BuildContext context) {
-                  return KeepCloseSetupPage();
-                }));
-              },
-              style: ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll<Color>(KCColorTheme.getYellowAccent()),
-                minimumSize: MaterialStateProperty.all(Size(buttonWidth, buttonHeight))
-              ),
-              child: Text(
-                "Set Up Device",
-                style: TextStyle(
-                  color: KCColorTheme.getDarkColor(),
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+                      return KeepCloseSetupPage();
+                    }));
+                },
+                minWidth: buttonWidth,
+                minHeight: buttonHeight,
+                fontSize: 20
             ),
-            // SizedBox(
-            //   height: buttonSpacing,
-            // ),
-            ElevatedButton(
-              onPressed: () {
-                print("Pressed Notification Settings button");
-              },
-              style: ButtonStyle(
-                  backgroundColor: MaterialStatePropertyAll<Color>(KCColorTheme.getYellowAccent()),
-                  minimumSize: MaterialStateProperty.all(Size(buttonWidth, buttonHeight))
-              ),
-              child: Text(
-                "Notification Settings",
-                style: TextStyle(
-                  color: KCColorTheme.getDarkColor(),
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            )
+            KCElevatedButton(
+                buttonTitle: "Notification Settings",
+                onPress: () async {
+                  print("Pressed Notification Settings button");
+                  await Navigator.push(context,
+                      MaterialPageRoute(builder: (BuildContext context) {
+                        return KeepCloseNotificationsSettingsPage();
+                      }));
+                },
+                minWidth: buttonWidth,
+                minHeight: buttonHeight,
+                fontSize: 20
+            ),
           ],
         ),
       ),

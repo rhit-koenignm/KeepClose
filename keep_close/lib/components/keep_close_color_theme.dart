@@ -1,10 +1,40 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
+/* Author: Natalie Koenig
+ * Last Updated: 4/26/2023
+ * Description: A class to hold the app's color scheme functions
+ */
+
 class KCColorTheme {
 
-  //************ Start of Color Palette Functions ************
+  //************ Wrapper Color Palette Functions ************
+  // These functions will let you change which colors are treated as primary,
+  // secondary, and accent colors. So you can change the appearance without
+  // having to go back and change every individual function.
 
+  static Color getDarkColor() {
+    return getSpaceCadetBlue();
+  }
+
+  static Color getLightColor() {
+    return getSeasalt();
+  }
+
+  static Color getYellowAccent() {
+    return getHunyadiYellow();
+  }
+
+  static Color getBlueAccent() {
+    return getVistaBlue();
+  }
+
+  static Color getRedAccent() {
+    return getBittersweet();
+  }
+
+  //************ Start of Color Palette Functions ************
+  // The functions below
   static Color getSeasalt() {
     return Color.fromRGBO(248, 247, 249, 1.0);
   }
@@ -12,7 +42,15 @@ class KCColorTheme {
   static Color getVistaBlue() {
     return Color.fromRGBO(142, 162, 255, 1.0);
   }
-  
+
+  static Color getSpaceCadetBlue() {
+    return Color.fromRGBO(43, 45, 66, 1.0);
+  }
+
+  static Color getRaisinBlack() {
+    return Color.fromRGBO(32, 34, 49, 1.0);
+  }
+
   static Color getBittersweet() {
     return Color.fromRGBO(228, 112, 104, 1.0);
   }

@@ -38,8 +38,8 @@ class _KeepCloseSetupPageState extends State<KeepCloseSetupPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 40, vertical: 16),
             child: KCTextFormField(labelText: "Enter Device Name"),
           ),
           KCElevatedButton(

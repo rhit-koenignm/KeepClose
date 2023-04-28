@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 import 'package:keep_close/components/kc_appbar.dart';
 import 'package:keep_close/components/kc_elevated_button.dart';
 import 'package:keep_close/components/keep_close_color_theme.dart';
 import 'package:keep_close/pages/keep_close_notifications_settings_page.dart';
 import 'package:keep_close/pages/keep_close_setup_page.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 /* Author: Natalie Koenig
  * Last Updated: 4/26/2023
